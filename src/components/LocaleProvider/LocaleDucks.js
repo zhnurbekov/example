@@ -5,8 +5,8 @@ import { EN_TRANSLATION } from "../../_locale/en";
 /**
  * Constants
  */
-export const moduleName = "locale";
-const CHANGE = `${moduleName}/CHANGE`;
+export const module = "locale";
+const CHANGE = `${module}/CHANGE`;
 
 /**
  * Reducer

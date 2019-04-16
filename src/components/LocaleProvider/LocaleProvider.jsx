@@ -14,7 +14,7 @@ import { LocaleProvider as AntdLocaleProvider } from "antd";
 import ru_RU from "antd/lib/locale-provider/ru_RU";
 import en_US from "antd/lib/locale-provider/en_US";
 import kk_KK from "./kk_KK";
-import { change } from "./LocaleDucks";
+import { module as locale, change } from "./LocaleDucks";
 
 addLocaleData([...ru, ...kk, ...en]);
 
@@ -49,8 +49,8 @@ class LocaleProvider extends React.Component {
 }
 
 const mapStateProp = state => ({
-  locale: state.locale.lang,
-  messages: state.locale.messages
+  locale: state[locale].lang,
+  messages: state[locale].messages
 });
 
 const mapDispatchProp = {
