@@ -13,7 +13,7 @@ import "moment/locale/kk";
 import { LocaleProvider as AntdLocaleProvider } from "antd";
 import ru_RU from "antd/lib/locale-provider/ru_RU";
 import en_US from "antd/lib/locale-provider/en_US";
-import kk_KK from "./messages/kk_KK";
+import kk_KK from "./kk_KK";
 
 addLocaleData([...ru, ...kk, ...en]);
 

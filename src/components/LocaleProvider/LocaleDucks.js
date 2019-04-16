@@ -1,6 +1,6 @@
-import { RU_TRANSLATION } from './messages/ru';
-import { KK_TRANSLATION } from './messages/kk';
-import { EN_TRANSLATION } from './messages/en';
+import { RU_TRANSLATION } from '../../_locale/ru';
+import { KK_TRANSLATION } from '../../_locale/kk';
+import { EN_TRANSLATION } from '../../_locale/en';
 
 /**
  * Constants
