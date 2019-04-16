@@ -28,8 +28,7 @@ module.exports = override(
       '@border-color-base': 'hsv(0, 0, 78%)',
       '@border-color-split': 'hsv(0, 0, 84%)',
       '@border-radius-base': '4px',
-      "@font-family" : "\"Segoe UI\", \"Chinese Quote\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Helvetica Neue\", Helvetica, Arial, sans-serif,\n" +
-        "\"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
+      "@font-family" : "\"Segoe UI\", \"Chinese Quote\", Tahoma, SansSerif, sans-serif",
     },
   }),
 );

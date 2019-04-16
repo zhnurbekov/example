@@ -1,75 +1,116 @@
-.fx-form {
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Chinese Quote", Tahoma, SansSerif, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.disabled {
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.6;
+}
+.disabled-input {
+  user-select: none;
+  pointer-events: none;
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+.hidden {
+  display: none !important;
+}
+
+/* React Table - begin */
+.rt-th:focus {
+  outline: none !important;
+}
+
+.rt-th.rt-resizable-header {
+  height: 55px;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
-.fx-form > div:first-of-type {
-  flex-grow: 4;
-  min-width: 150px;
-  flex-basis: 0;
-  margin-top: -5px;
+.rt-td {
+  padding-left: 15px !important;
+}
+/* React Table - end */
+
+/* Antd design - begin */
+
+.ant-form-explain {
+  font-size: 12px;
 }
 
-.fx-form > div:last-of-type {
-  flex-grow: 6;
-  min-width: 150px;
-  flex-basis: 0;
+.ant-row.ant-form-item {
+  margin-bottom: 5px;
 }
 
-.fx-start {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+.ant-pagination-options-size-changer.ant-select {
+  margin-right: 0;
 }
 
-.fx-gr-10 { flex-grow: 10; }
-.fx-gr-15 { flex-grow: 15; }
-.fx-gr-20 { flex-grow: 20; }
-.fx-gr-25 { flex-grow: 25; }
-.fx-gr-30 { flex-grow: 30; }
-.fx-gr-35 { flex-grow: 35; }
-.fx-gr-40 { flex-grow: 40; }
-.fx-gr-45 { flex-grow: 45; }
-.fx-gr-50 { flex-grow: 50; }
-.fx-gr-55 { flex-grow: 55; }
-.fx-gr-60 { flex-grow: 60; }
-.fx-gr-65 { flex-grow: 65; }
-.fx-gr-70 { flex-grow: 70; }
-.fx-gr-75 { flex-grow: 75; }
-.fx-gr-80 { flex-grow: 80; }
-.fx-gr-85 { flex-grow: 85; }
-.fx-gr-90 { flex-grow: 90; }
-.fx-gr-95 { flex-grow: 95; }
-.fx-gr-100 { flex-grow: 100; }
-.fx-bs-10 { flex-basis: 10%; }
-.fx-bs-15 { flex-basis: 15%; }
-.fx-bs-20 { flex-basis: 20%; }
-.fx-bs-25 { flex-basis: 25%; }
-.fx-bs-30 { flex-basis: 30%; }
-.fx-bs-35 { flex-basis: 35%; }
-.fx-bs-40 { flex-basis: 40%; }
-.fx-bs-45 { flex-basis: 45%; }
-.fx-bs-50 { flex-basis: 50%; }
-.fx-bs-55 { flex-basis: 55%; }
-.fx-bs-60 { flex-basis: 60%; }
-.fx-bs-65 { flex-basis: 65%; }
-.fx-bs-70 { flex-basis: 70%; }
-.fx-bs-75 { flex-basis: 75%; }
-.fx-bs-80 { flex-basis: 80%; }
-.fx-bs-85 { flex-basis: 85%; }
-.fx-bs-90 { flex-basis: 90%; }
-.fx-bs-95 { flex-basis: 95%; }
-.fx-bs-100 { flex-basis: 100%; }
+.ant-input-disabled,
+.ant-pagination-disabled a,
+.ant-pagination-disabled:hover a,
+.ant-pagination-disabled:focus a,
+.ant-pagination-disabled .ant-pagination-item-link,
+.ant-pagination-disabled:hover .ant-pagination-item-link,
+.ant-pagination-disabled:focus .ant-pagination-item-link {
+  cursor: default;
+}
 
-.loading-circle {
-  padding: 10px;
-  width: 61px;
-  height: 61px;
-  margin: auto;
-  border-radius: 50%;
+.ant-form-item-label label:after {
+  margin: 0 15px 0 2px;
+}
+
+.ant-calendar-picker {
+  width: 100%;
+}
+
+.ant-upload.ant-upload-select-picture-card {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.ant-form-item-children {
+  display: block;
+}
+
+.ant-upload.ant-upload-drag {
+  background-color: #f5f5f5;
+}
+
+.ant-tabs-content {
   background-color: white;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1),
-  0px 2px 2px 0px rgba(0, 0, 0, 0.08),
-  0px 3px 1px -2px rgba(0, 0, 0, 0.05);
+  padding: 10px 20px 20px;
+  border: 1px solid #d6d6d6;
+  border-top: none;
+  border-radius: 0 6px 6px 6px;
 }
+
+.ant-tabs-bar {
+  margin: 0;
+}
+
+.ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab {
+  border-radius: 6px 6px 0 0;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  min-width: 250px;
+  text-align: center;
+}
+
+.ant-tabs-tab {
+  color: rgba(0, 0, 0, 0.7);
+}
+/* Antd design - end */

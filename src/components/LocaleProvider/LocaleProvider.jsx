@@ -17,7 +17,7 @@ import kk_KK from "./messages/kk_KK";
 
 addLocaleData([...ru, ...kk, ...en]);
 
-class Locale extends React.Component {
+class LocaleProvider extends React.Component {
   getLocale = () => {
     moment.locale(this.props.locale);
     switch (this.props.locale) {
@@ -44,4 +44,4 @@ const mapStateProp = state => ({
   messages: state.locale.messages
 });
 
-export default connect(mapStateProp)(Locale);
+export default connect(mapStateProp)(LocaleProvider);
