@@ -7,7 +7,6 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={routeProps => {
-      console.log(rest);
 
       if (rest.loading) {
         return <div>loading...</div>;
