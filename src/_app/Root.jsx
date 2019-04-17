@@ -1,30 +1,24 @@
 import React from "react";
 import { compose } from "redux";
-import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { NotificationContainer } from "react-notifications";
 import withLocalization from "../_hoc/withLocalization";
-import { changeLocale } from "../LocaleProvider/locale.actions";
-import Text from "../_ui/Text";
+import routers from "../_helpers/routers";
+import ProtectedRoute from "../_ui/ProtectedRoute";
 
-const Root = ({ text, changeLocale, lang }) => {
-  return (
-    <>
-      <NotificationContainer />
-      lang: {lang} <br />
-      {text('Тестовое сообщение')} <br />
-      <Text id="Тестовое сообщение"/> <br />
-      <button onClick={() => changeLocale("ru")}>ru</button>
-      <button onClick={() => changeLocale("kk")}>kk</button>
-      <button onClick={() => changeLocale("en")}>en</button>
-    </>
-  );
-};
+const Root = () => (
+  <>
+    <NotificationContainer />
+
+    <div className="container">
+      {routers.map(route => (
+        <ProtectedRoute key={route.path} {...route} />
+      ))}
+    </div>
+  </>
+);
 
 export default compose(
   withRouter,
-  withLocalization,
-  connect(null, {changeLocale})
+  withLocalization
 )(Root);
-
-

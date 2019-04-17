@@ -1,14 +1,20 @@
-import { LOGIN } from './login.constants'
+import { LOGIN, LOADING, PERMISSIONS } from "./login.constants";
+import { createReducer } from "redux-starter-kit";
 
 const initialState = {
-  user: null
+  user: null,
+  loading: false,
+  permissions: []
 };
 
-export default function(state = initialState, action) {
-  switch (action.type) {
-    case LOGIN:
-      return { ...state, user: action.user };
-    default:
-      return state;
-  }
-}
+export default createReducer(initialState, {
+  [LOGIN]: (state, action) => ({
+    user: action.user
+  }),
+  [LOADING]: (state, action) => ({
+    loading: action.loading
+  }),
+  [PERMISSIONS]: (state, action) => ({
+    permissions: action.permissions
+  })
+});
