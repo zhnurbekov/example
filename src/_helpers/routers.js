@@ -1,14 +1,12 @@
-import Role from "../_constants/Role";
+import Roles from "./Roles";
 
 const routers = [
   {
     path: "/login",
-    ru_name: 'Авторизация',
-    kk_name: 'Авторизация',
-    en_name: 'Authorization',
+    text: 'Авторизация',
     component: undefined,
     withoutAuth: true,
-    role: [Role.ADMIN],
+    role: [Roles.ADMIN],
     withHeader: false,
     exact: true
   }

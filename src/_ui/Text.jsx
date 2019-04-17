@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FormattedHTMLMessage } from "react-intl";
 
-export default function Message(props) {
+export default function Text(props) {
   return <FormattedHTMLMessage {...props} />;
 }
 
-Message.propTypes = {
+Text.propTypes = {
   id: PropTypes.string.isRequired
 };

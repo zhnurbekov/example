@@ -14,16 +14,16 @@ import { LocaleProvider as AntdLocaleProvider } from "antd";
 import ru_RU from "antd/lib/locale-provider/ru_RU";
 import en_US from "antd/lib/locale-provider/en_US";
 import kk_KK from "./kk_KK";
-import { module as locale, changeLocale } from "./LocaleDucks";
+import { module as localeModule } from "./locale.constants";
+import { changeLocale } from "./locale.actions";
 
 addLocaleData([...ru, ...kk, ...en]);
 
 class LocaleProvider extends React.Component {
-
   componentDidMount() {
     let lang = localStorage.getItem("lang");
     if (lang && lang !== this.props.locale) {
-      this.props.changeLocale(lang)
+      this.props.changeLocale(lang);
     }
   }
 
@@ -49,15 +49,11 @@ class LocaleProvider extends React.Component {
 }
 
 const mapStateProp = state => ({
-  locale: state[locale].lang,
-  messages: state[locale].messages
+  locale: state[localeModule].lang,
+  messages: state[localeModule].messages
 });
 
-const mapDispatchProp = {
-  changeLocale: changeLocale
-};
-
-export default connect(mapStateProp, mapDispatchProp)(LocaleProvider);
+export default connect(mapStateProp, { changeLocale })(LocaleProvider);
 
 /*
 

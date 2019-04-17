@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import localeReducer, { module as locale } from "../components/LocaleProvider/LocaleDucks";
+import { module as locale } from "../LocaleProvider/locale.constants";
+import localeReducer from "../LocaleProvider/locale.reducer";
 import { connectRouter } from "connected-react-router";
 import sortReducers from "../utils/sortReducers";
 

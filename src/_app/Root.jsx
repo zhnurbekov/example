@@ -4,17 +4,16 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { NotificationContainer } from "react-notifications";
 import withLocalization from "../_hoc/withLocalization";
-import { changeLocale } from "../components/LocaleProvider/LocaleDucks";
-import Message from "../_ui/Message";
+import { changeLocale } from "../LocaleProvider/locale.actions";
+import Text from "../_ui/Text";
 
-const Root = (props) => {
-  const { iMessage, changeLocale, lang } = props;
+const Root = ({ text, changeLocale, lang }) => {
   return (
     <>
       <NotificationContainer />
       lang: {lang} <br />
-      {iMessage('test_message')} <br />
-      <Message id="test_message"/> <br />
+      {text('Тестовое сообщение')} <br />
+      <Text id="Тестовое сообщение"/> <br />
       <button onClick={() => changeLocale("ru")}>ru</button>
       <button onClick={() => changeLocale("kk")}>kk</button>
       <button onClick={() => changeLocale("en")}>en</button>
@@ -22,14 +21,10 @@ const Root = (props) => {
   );
 };
 
-const dispathProps = {
-  changeLocale: changeLocale
-};
-
 export default compose(
   withRouter,
   withLocalization,
-  connect(null, dispathProps)
+  connect(null, {changeLocale})
 )(Root);
 
 

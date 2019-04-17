@@ -2,8 +2,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import { store, history } from "../_helpers/store";
 import { ConnectedRouter as Router } from "connected-react-router";
-import LocaleProvider from "../components/LocaleProvider/LocaleProvider";
-import StyleProvider from "../components/StyleProvider/StyleProvider";
+import LocaleProvider from "../LocaleProvider/LocaleProvider";
+import StyleProvider from "../StyleProvider/StyleProvider";
 import Root from "./Root";
 
 export default function App() {

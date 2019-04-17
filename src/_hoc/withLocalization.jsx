@@ -8,14 +8,14 @@ const withLocalization = Component => {
       return (
         <Component
           {...otherProps}
-          iMessage={param => {
+          lang={intl.locale}
+          text={param => {
             if (param instanceof Object) {
               return intl.formatHTMLMessage(param);
             } else {
               return intl.formatHTMLMessage({ id: param });
             }
           }}
-          lang={intl.locale}
         />
       );
     }
