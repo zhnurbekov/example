@@ -29,7 +29,7 @@ export default function(state = initialState, action) {
 /**
  * Actions
  */
-export const change = lang => {
+export const changeLocale = lang => {
   localStorage.setItem("lang", lang);
 
   let messages = RU_TRANSLATION.messages;

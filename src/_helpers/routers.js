@@ -7,7 +7,7 @@ const routers = [
     kk_name: 'Авторизация',
     en_name: 'Authorization',
     component: undefined,
-    withoutAuth: false,
+    withoutAuth: true,
     role: [Role.ADMIN],
     withHeader: false,
     exact: true

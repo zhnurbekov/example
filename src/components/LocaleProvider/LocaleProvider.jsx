@@ -1,5 +1,5 @@
 import React from "react";
-import connect from "react-redux/es/connect/connect";
+import { connect } from "react-redux";
 
 import { IntlProvider, addLocaleData } from "react-intl";
 import ru from "react-intl/locale-data/ru";
@@ -14,7 +14,7 @@ import { LocaleProvider as AntdLocaleProvider } from "antd";
 import ru_RU from "antd/lib/locale-provider/ru_RU";
 import en_US from "antd/lib/locale-provider/en_US";
 import kk_KK from "./kk_KK";
-import { module as locale, change } from "./LocaleDucks";
+import { module as locale, changeLocale } from "./LocaleDucks";
 
 addLocaleData([...ru, ...kk, ...en]);
 
@@ -54,7 +54,48 @@ const mapStateProp = state => ({
 });
 
 const mapDispatchProp = {
-  changeLocale: change
+  changeLocale: changeLocale
 };
 
 export default connect(mapStateProp, mapDispatchProp)(LocaleProvider);
+
+/*
+
+
+
+function connect(callbackStates, actions) {
+  let state = {};
+  let reducers = {
+    router: function(state, action) {
+
+    },
+    locale: function(state, action) {
+
+    }
+  };
+
+  let readReducers = (action) => {
+    Object.keys(reducers).forEach(key => {
+      state[key] = reducers[key](state, action)
+    });
+  };
+  let stateProps = callbackStates(state);
+  let newAction = {};
+
+  Object.keys(actions).forEach(key => {
+    newAction[key] = () => {
+      let action = actions[key]();
+      let tempState = readReducers(action);
+      if (tempState) {
+        state[key] = tempState;
+      }
+    }
+  });
+
+  return function(Component) {
+    <Component {...stateProps} {...newAction} />
+  }
+}
+
+
+*/

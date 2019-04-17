@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const instance = axios.create({
+export const Api = axios.create({
   baseURL: "https://example.com/api/",
   headers: {
     "Content-Type": "application/json"
@@ -38,5 +38,5 @@ const unauthorizedResponse = async error => {
   return Promise.reject(error);
 };
 
-instance.interceptors.request.use(configureAuth, e => Promise.reject(e));
-instance.interceptors.response.use(r => r, unauthorizedResponse);
+Api.interceptors.request.use(configureAuth, e => Promise.reject(e));
+Api.interceptors.response.use(r => r, unauthorizedResponse);
