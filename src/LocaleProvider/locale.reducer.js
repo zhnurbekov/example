@@ -1,3 +1,4 @@
+import { createReducer } from "redux-starter-kit";
 import { CHANGE } from "./locale.constants";
 import { RU_TRANSLATION } from "../_locale/ru";
 
@@ -6,12 +7,9 @@ const initialState = {
   messages: RU_TRANSLATION.messages
 };
 
-export default function(state = initialState, action) {
-  const { type, lang, messages } = action;
-  switch (type) {
-    case CHANGE:
-      return { lang, messages };
-    default:
-      return state;
-  }
-}
+export default createReducer(initialState, {
+  [CHANGE]: (state, action) => ({
+    lang: action.lang,
+    messages: action.messages
+  })
+});

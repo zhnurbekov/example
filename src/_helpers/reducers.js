@@ -1,10 +1,10 @@
-import { combineReducers } from "redux";
 import { module as locale } from "../LocaleProvider/locale.constants";
 import localeReducer from "../LocaleProvider/locale.reducer";
-import { connectRouter } from "connected-react-router";
+import { module as login } from "../LoginPage/login.constants";
+import loginReducer from "../LoginPage/login.reducer";
 import sortReducers from "../utils/sortReducers";
 
-export default history => combineReducers(sortReducers({
-  router: connectRouter(history),
-  [locale]: localeReducer
-}));
+export const rootReducer = sortReducers({
+  [locale]: localeReducer,
+  [login]: loginReducer
+});
