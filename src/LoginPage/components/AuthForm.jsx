@@ -16,6 +16,7 @@ const authForm = ({}) => (
     }}
     validationSchema={loginValidate}
     onSubmit={values => {
+      console.log(values)
     }}
   >
     {({ values, errors, handleChange, handleSubmit }) => (
@@ -30,7 +31,7 @@ const authForm = ({}) => (
           type="password"
           name="password"
           placeholder="password"
-          value={values.email}
+          value={values.password}
           onChange={handleChange}/>
 
         <Button type="submit" block style={{ backgroundColor: Color.primary }}>
