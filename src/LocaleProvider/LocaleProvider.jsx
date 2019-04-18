@@ -55,9 +55,9 @@ const mapStateProp = state => ({
 
 export default connect(mapStateProp, { changeLocale })(LocaleProvider);
 
+
+
 /*
-
-
 
 function connect(callbackStates, actions) {
   let state = {};
@@ -92,6 +92,6 @@ function connect(callbackStates, actions) {
     <Component {...stateProps} {...newAction} />
   }
 }
-
-
 */
+
+

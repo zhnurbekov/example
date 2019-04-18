@@ -2,7 +2,7 @@
  * Часто применяемые цвета
  */
 export default {
-  primary: '#3990a3',
+  primary: '#007bff',
   primaryLight: '#45bfd3',
   error: '#D32F2F',
   errorLight: '#ff8ca3',

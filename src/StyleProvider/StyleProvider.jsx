@@ -3,6 +3,7 @@ import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import "react-table/react-table.css";
 import '../_app/style.scss'
 import '../_app/basscss.min.css'
+import 'react-notifications/lib/notifications.css'
 import Color from "../_helpers/Color";
 
 const theme = createMuiTheme({
