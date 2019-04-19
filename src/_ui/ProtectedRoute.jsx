@@ -17,6 +17,10 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
         return <Redirect to="/login" />;
       }
 
+      if (rest.user && rest.path === '/login') {
+        return <Redirect to="/" />
+      }
+
       return <Component {...routeProps} />;
     }}
   />

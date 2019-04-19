@@ -8,11 +8,8 @@ import { login } from "./login.actions";
 import { connect } from "react-redux";
 import { Input } from "antd";
 
-
 function LoginPage({ login }) {
-
-
-  return <div style={{ textAlign: "center", marginTop: "5%" }}>
+  return (
     <Wrapper>
       <h4 style={{ marginBottom: "15px" }}>Авторизация</h4>
       <Formik
@@ -27,7 +24,6 @@ function LoginPage({ login }) {
         }}
       >
         {({ values, errors, handleChange, handleSubmit }) => (
-
           <Form onSubmit={handleSubmit}>
             <Input
               type="login"
@@ -37,7 +33,9 @@ function LoginPage({ login }) {
               onChange={handleChange}
               required={false}
             />
-            <div><ErrorMessage name="login"/></div>
+            <div>
+              <ErrorMessage name="login" />
+            </div>
             <Input
               style={{ marginTop: "15px" }}
               type="password"
@@ -46,26 +44,40 @@ function LoginPage({ login }) {
               value={values.password}
               onChange={handleChange}
             />
-            <div><ErrorMessage name="password"/></div>
-            <Button type="submit"
-                    style={{ marginTop: "15px", backgroundColor: Color.primary, width: "100%", color: "white" }}>
+            <div>
+              <ErrorMessage name="password" />
+            </div>
+            <Button
+              className="ddd"
+              type="submit"
+              style={{
+                marginTop: "15px",
+                backgroundColor: Color.primary,
+                width: "100%",
+                color: "white"
+              }}
+            >
               Сохранить
             </Button>
           </Form>
         )}
       </Formik>
-    </Wrapper></div>;
+    </Wrapper>
+  );
 }
 
 const mapStateProp = state => {
   console.log(state);
 
   return {
-    state,
+    state
   };
   /*({
     state
   });*/
-}
+};
 
-export default connect(mapStateProp, { login })((LoginPage));
+export default connect(
+  mapStateProp,
+  { login }
+)(LoginPage);

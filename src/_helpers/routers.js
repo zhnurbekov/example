@@ -1,35 +1,39 @@
-import Roles from "./Roles";
 import LoginPage from "../LoginPage/LoginPage";
 import Test from "../LoginPage/Test";
+import HomePage from "../HomePage/HomePage";
+
+/*
+{
+  path: "/menu",
+  text: 'Авторизация',
+  component: Test,
+  withoutAuth: true,
+  role: [Roles.ADMIN],
+  withHeader: false
+  exact: true
+}
+*/
 
 const routers = [
-
   {
     path: "/",
-    text: 'Авторизация',
-    component: LoginPage,
-    withoutAuth: true,
-    role: [Roles.ADMIN],
-    withHeader: false, // для примера
+    text: "Главная",
+    component: HomePage,
     exact: true
   },
   {
     path: "/login",
-    text: 'Авторизация',
+    text: "Авторизация",
     component: LoginPage,
     withoutAuth: true,
-    role: [Roles.ADMIN],
-    withHeader: false, // для примера
     exact: true
   },
 
   {
     path: "/menu",
-    text: 'Авторизация',
-    component: Test,
+    text: "Меню",
     withoutAuth: true,
-    role: [Roles.ADMIN],
-    withHeader: false, // для примера
+    component: Test,
     exact: true
   }
 ];

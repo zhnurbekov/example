@@ -8,13 +8,13 @@ export const Wrapper = styled.div`
   width: 280px;
   background-color: white;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  
+  left: calc(50% - 140px);
+  top: calc(50% - 100px);
   div{color: red};
   
-  
+  .ddd { 
+    background-color: green !important;
+  }
 `;
 
 
