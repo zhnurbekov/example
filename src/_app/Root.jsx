@@ -6,7 +6,6 @@ import withLocalization from "../_hoc/withLocalization";
 import routers from "../_helpers/routers";
 import ProtectedRoute from "../_ui/ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
-import createNotification from "../StyleProvider/CreateNotification";
 
 const Root = () => (
   <>

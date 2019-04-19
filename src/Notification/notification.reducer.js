@@ -2,7 +2,7 @@ import { INFO,SUCCESS,WARNING , ERROR} from "./notification.constants";
 import { createReducer } from "redux-starter-kit";
 
 const initialState = {
-  type: null,
+  type: '',
   message: '',
 };
 

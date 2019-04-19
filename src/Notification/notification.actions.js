@@ -1,8 +1,8 @@
 
-export const changeLocale = (type,messages) => {
+export const sendNotifications = (type,message) => {
 
   return {
     type: type,
-    messages: messages
+    message: message
   };
 };
